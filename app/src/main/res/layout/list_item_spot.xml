@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable name="viewModel" type="com.edlo.demodatabinding.databinding.SpotViewModel"/>
+</data>
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/marginDefault"
+    android:layout_marginVertical="@dimen/paddingDefault"
+    android:padding="@dimen/marginDefault"
+    android:background="@drawable/rect_rounded_w_stroke_grey"
+    android:elevation="4dp">
+
+    <!--android:src="@{viewModel.image}"-->
+
+    <ImageView
+        android:id="@+id/imgSpot"
+        android:scaleType="centerCrop"
+        android:src="@{viewModel.image}"
+        android:layout_width="@dimen/imgSpotSize"
+        android:layout_height="@dimen/imgSpotSize"
+        android:background="@color/grey40"
+        app:layout_constraintEnd_toStartOf="@+id/txtName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:text="@{viewModel.name}"
+        style="@style/Spot.List.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/marginDefault"
+        android:layout_marginStart="@dimen/marginL1"
+        app:layout_constraintStart_toEndOf="@+id/imgSpot"
+        app:layout_constraintTop_toTopOf="parent"
+    />
+    <TextView
+        android:id="@+id/txtPark"
+        style="@style/Spot.List.Park"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{viewModel.parkName}"
+        android:layout_marginEnd="@dimen/marginDefault"
+        app:layout_constraintBottom_toBottomOf="@+id/txtName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtName"/>
+    <TextView
+        android:id="@+id/txtDesc"
+        android:text="@{viewModel.desc}"
+        android:lines="2"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginL1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtName"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
+    />
+</android.support.constraint.ConstraintLayout>
+</layout>

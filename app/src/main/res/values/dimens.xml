@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="imgSpotSize">70dp</dimen>
+    <dimen name="defaultCornerRadius">6dp</dimen>
+</resources>
